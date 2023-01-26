@@ -11,6 +11,8 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int i = 0;
+	size_t m;
+	char *str = NULL;
 	int n_displayed = 0;
 
 	va_start(args, format);
@@ -27,6 +29,17 @@ int _printf(const char *format, ...)
 			{
 				_putchar(va_arg(args, int));
 				i++;
+			}
+			else if (format[i + 1] == 's')
+			{
+				i++;
+				str = va_arg(args, char *);
+				m = 0;
+				while (str[m] != '\0')
+				{
+					_putchar(str[m]);
+					m++;
+				}
 			}
 		}
 
