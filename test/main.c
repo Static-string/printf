@@ -9,7 +9,7 @@
  */
 
 int main(void){
-	 _printf("%sHello World\n", "Harvey");
+	 _printf("%%Hello %s%c\n", "World",'B', '%');
 
 	 return (0);
 }
